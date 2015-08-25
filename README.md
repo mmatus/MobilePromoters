@@ -90,7 +90,7 @@ Used in paper: Promoter Propagation in Prokaryotes, NAR 2012 http://nar.oxfordjo
 	
 	a. _pipeline_PMP.pl_
 	
-	Script that coordinates the complete pipeline. To establish/modify the settings of the pipeline, you need to modify the file ‘parameteres.txt’ which is the input of this program (see below in 5). Next a brief explanation of the scripts called by pipeline_PMP.pl:
+	Script that coordinates the complete pipeline. To establish/modify the settings of the pipeline, you need to modify the file ‘parameteres.txt’ which is the input of this program (see number 4 above). Next a brief explanation of the scripts called by pipeline_PMP.pl:
 		
 	b. _getCDSandPromRegions.pl_
 	
