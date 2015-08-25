@@ -93,28 +93,37 @@ perl pipeline_PMP.pl parameters.txt
 Explanation of what each script is doing:
 
 a. _pipeline_PMP.pl_
+
 Script that coordinates the complete pipeline. To establish/modify the settings of the pipeline, you need to modify the file ‘parameteres.txt’ which is the input of this program (see below in 5). Next a brief explanation of the scripts called by pipeline_PMP.pl:
 	
 b. _getCDSandPromRegions.pl_
+
 This script extracts the promoters and CDSs sequences from each genome.
 	
 c. _blastClust.pl_	
+
 It calls for Netclust in order to produce inter-genome clusters of PMPs.
 
 d. _filterParalogs.pl_
+
 Filter for paralogy of the downstream CDSs of the clusters of PMPs.
 	
 e. _filterUpstreamParalogs.pl_
+
 Filter for paralogy of the upstream CDSs of the clusters of PMPs.
 	
 f. _getRep.pl_
+
 Get representatives and all members of each cluster of PMPs.
 	
 g. _formatDatabase.pl_
+
 Add information to each cluster, such as functional annotation of the downstream CDS of the PMP.
 	
 h. _formatcdhit.pl_
+
 Format file of representatives for using CD-HIT.
 	
 i. _finalFormat.pl_
+
 Add a cluster ID to the non-redundant set of PMPs clusters.
