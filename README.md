@@ -1,15 +1,19 @@
 # MobilePromoters
-Perl pipeline to identify mobile promoters in prokaryotic genomes.
+Perl pipeline to identify mobile promoters in prokaryotic genomes. 
+
+Citation
+
+## How to use it
 
 1. Environment. The pipeline was written to run in a UNIX platform.
 
-2. Data
+2. Make databases
 
-	a. Genomes to be analyzed. You need the .fna and .ptt files provided by the NCBI ftp site. ftp://ftp.ncbi.nih.gov/genomes/Bacteria/
+	a. Prokaryotic genomes to be analyzed. You need the .fna and .ptt files provided by the NCBI ftp site. ftp://ftp.ncbi.nih.gov/genomes/Bacteria/
 	
 	b. RFAM database provided as a single file (.cm). ftp://selab.janelia.org/pub/Rfam
 
-3.  Additional programs
+3. Install dependencies
 
 	a. Perl (of course)
 
@@ -23,39 +27,9 @@ Perl pipeline to identify mobile promoters in prokaryotic genomes.
 	
 	f. IS Finder. Use it online with file *.ReprFinal. http://www-is.biotoul.fr/
 
-4. Perl scripts provided in Supplementary Dataset 1
+4. Modify parameters.txt file located in pipeline/
 
-	a. _pipeline_PMP.pl_
-	
-	Usage: perl pipeline_PMP.pl parameters.txt
-	
-	Script that coordinates the complete pipeline. To establish/modify the settings of the pipeline, you need to modify the file ‘parameteres.txt’ which is the input of this program (see below in 5). Next a brief explanation of the scripts called by pipeline_PMP.pl:
-	
-	b. _getCDSandPromRegions.pl_
-	This script extracts the promoters and CDSs sequences from each genome.
-	
-	c. _blastClust.pl_	
-	It calls for Netclust in order to produce inter-genome clusters of PMPs.
-	
-	d. _filterParalogs.pl_
-	Filter for paralogy of the downstream CDSs of the clusters of PMPs.
-	
-	e. _filterUpstreamParalogs.pl_
-	Filter for paralogy of the upstream CDSs of the clusters of PMPs.
-	
-	f. _getRep.pl_
-	Get representatives and all members of each cluster of PMPs.
-	
-	g. _formatDatabase.pl_
-	Add information to each cluster, such as functional annotation of the downstream CDS of the PMP.
-	
-	h. _formatcdhit.pl_
-	Format file of representatives for using CD-HIT.
-	
-	i. _finalFormat.pl_
-	Add a cluster ID to the non-redundant set of PMPs clusters.
-
-5. To modify the settings of the pipeline, edit the input file ‘parameters.txt’. The mandatory parameters you need to establish are marked with a double asterisk (**), and they are the name of the run, the directory with the genomes, the directory with the RFAM database and the directory with the CD-HIT program. Modify only the text after the equal (=) sign.
+To modify the settings of the pipeline, edit the input file ‘parameters.txt’. The mandatory parameters you need to establish are marked with a double asterisk (**), and they are the name of the run, the directory with the genomes, the directory with the RFAM database and the directory with the CD-HIT program. Modify only the text after the equal (=) sign.
 
 ```
 \\Specify the run name**
@@ -107,3 +81,38 @@ aL = 0.5
 \\Identity level for defining same cluster in CD-HIT (use same as BLAST)
 c = 0.8
 ```
+
+
+5. Run master Perl script located in pipeline/
+
+```
+perl pipeline_PMP.pl parameters.txt
+``
+
+	a. _pipeline_PMP.pl_
+	Script that coordinates the complete pipeline. To establish/modify the settings of the pipeline, you need to modify the file ‘parameteres.txt’ which is the input of this program (see below in 5). Next a brief explanation of the scripts called by pipeline_PMP.pl:
+	
+	b. _getCDSandPromRegions.pl_
+	This script extracts the promoters and CDSs sequences from each genome.
+	
+	c. _blastClust.pl_	
+	It calls for Netclust in order to produce inter-genome clusters of PMPs.
+	
+	d. _filterParalogs.pl_
+	Filter for paralogy of the downstream CDSs of the clusters of PMPs.
+	
+	e. _filterUpstreamParalogs.pl_
+	Filter for paralogy of the upstream CDSs of the clusters of PMPs.
+	
+	f. _getRep.pl_
+	Get representatives and all members of each cluster of PMPs.
+	
+	g. _formatDatabase.pl_
+	Add information to each cluster, such as functional annotation of the downstream CDS of the PMP.
+	
+	h. _formatcdhit.pl_
+	Format file of representatives for using CD-HIT.
+	
+	i. _finalFormat.pl_
+	Add a cluster ID to the non-redundant set of PMPs clusters.
+
