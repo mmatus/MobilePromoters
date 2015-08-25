@@ -29,7 +29,7 @@ Used in paper: Promoter Propagation in Prokaryotes, NAR 2012 http://nar.oxfordjo
 
 4. Modify parameters.txt file located in pipeline/
 
-To modify the settings of the pipeline, edit the input file ‘parameters.txt’. The mandatory parameters you need to establish are marked with a double asterisk (**), and they are the name of the run, the directory with the genomes, the directory with the RFAM database and the directory with the CD-HIT program. Modify only the text after the equal (=) sign.
+	To modify the settings of the pipeline, edit the input file ‘parameters.txt’. The mandatory parameters you need to establish are marked with a double asterisk (**), and they are the name of the run, the directory with the genomes, the directory with the RFAM database and the directory with the CD-HIT program. Modify only the text after the equal (=) sign.
 
 ```
 \\Specify the run name**
@@ -46,7 +46,7 @@ run_blast = MODIFY [T/F; e.g. T]
 cpus = MODIFY [1 for PC or >1 when working in a cluster; e.g. 8]
 ```
 
-The rest of the parameters can be left as they are or modified according to the user’s preferences:
+	The rest of the parameters can be left as they are or modified according to the user’s preferences:
 
 
 ```
