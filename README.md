@@ -10,6 +10,7 @@ Perl pipeline to identify mobile promoters in prokaryotic genomes.
 	b. RFAM database provided as a single file (.cm). ftp://selab.janelia.org/pub/Rfam
 
 3.  Additional programs
+
 	a. Perl (of course)
 
 	b. Blastall
@@ -23,34 +24,35 @@ Perl pipeline to identify mobile promoters in prokaryotic genomes.
 	f. IS Finder. Use it online with file *.ReprFinal. http://www-is.biotoul.fr/
 
 4. Perl scripts provided in Supplementary Dataset 1
-	a. Pipeline_PMP.pl
-	Script that coordinates the complete pipeline. To establish/modify the settings of the pipeline, you need to modify the file ‘parameteres.txt’ which is the input of this program (see below in 5). 
+
+	a. _pipeline_PMP.pl_
+	
 	Usage: perl pipeline_PMP.pl parameters.txt
 	
-	Next a brief explanation of the scripts called by pipeline_PMP.pl:
+	Script that coordinates the complete pipeline. To establish/modify the settings of the pipeline, you need to modify the file ‘parameteres.txt’ which is the input of this program (see below in 5). Next a brief explanation of the scripts called by pipeline_PMP.pl:
 	
-	b. getCDSandPromRegions.pl
+	b. _getCDSandPromRegions.pl_
 	This script extracts the promoters and CDSs sequences from each genome.
 	
-	c. blastClust.pl
+	c. _blastClust.pl_	
 	It calls for Netclust in order to produce inter-genome clusters of PMPs.
 	
-	d. filterParalogs.pl
+	d. _filterParalogs.pl_
 	Filter for paralogy of the downstream CDSs of the clusters of PMPs.
 	
-	e. filterUpstreamParalogs.pl
+	e. _filterUpstreamParalogs.pl_
 	Filter for paralogy of the upstream CDSs of the clusters of PMPs.
 	
-	f. getRep.pl
+	f. _getRep.pl_
 	Get representatives and all members of each cluster of PMPs.
 	
-	g. formatDatabase.pl
+	g. _formatDatabase.pl_
 	Add information to each cluster, such as functional annotation of the downstream CDS of the PMP.
 	
-	h. formatcdhit.pl
+	h. _formatcdhit.pl_
 	Format file of representatives for using CD-HIT.
 	
-	i. finalFormat.pl
+	i. _finalFormat.pl_
 	Add a cluster ID to the non-redundant set of PMPs clusters.
 
 5. To modify the settings of the pipeline, edit the input file ‘parameters.txt’. The mandatory parameters you need to establish are marked with a double asterisk (**), and they are the name of the run, the directory with the genomes, the directory with the RFAM database and the directory with the CD-HIT program. Modify only the text after the equal (=) sign.
