@@ -1,7 +1,7 @@
-# MobilePromoters
+# Mobile Promoters
 Perl pipeline to identify mobile promoters in prokaryotic genomes. 
 
-Citation
+Used in paper: Promoter Propagation in Prokaryotes, NAR 2012 http://nar.oxfordjournals.org/content/early/2012/08/27/nar.gks787.long
 
 ## How to use it
 
@@ -87,7 +87,9 @@ c = 0.8
 
 ```
 perl pipeline_PMP.pl parameters.txt
-``
+```
+
+Explanation of what each script is doing:
 
 	a. _pipeline_PMP.pl_
 	Script that coordinates the complete pipeline. To establish/modify the settings of the pipeline, you need to modify the file ‘parameteres.txt’ which is the input of this program (see below in 5). Next a brief explanation of the scripts called by pipeline_PMP.pl:
