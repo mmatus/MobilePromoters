@@ -1,0 +1,49 @@
+\\Specify the run name**
+run_name = new
+\\Directory of the genomes. Don't put a slash at the end.**
+dir_genomes = 20110525
+\\Directory of the RFAM models. Don't put a slash at the end.**
+dir_RFAM = RFAM-current
+\\Directory of the CD-HIT program. Don't put a slash at the end.**
+dir_CDHIT = cd-hit-v4.5.4-2011-03-07
+\\Run BLAST for all genomes. Only do it the first time you run the pipeline.**
+run_blast = T
+\\Number of CPUs to use in the BLAST. Select one if working in your PC, or more if you're working in a cluster.**
+cpus = 8
+\\Minimum promoter size allowed
+min_prom = 100
+\\Minimum cds size allowed
+min_cds = 100
+\\Max promoter region taken for doing BLAST
+max_prom = 100
+\\Max cds region taken for doing BLAST
+max_cds = 100
+\\Set-off position for taking promoter and cds regions for doing BLAST
+set_off = 50
+\\Minimum word size in BLAST
+word_size = 11
+\\Maximum e-value allowed in the BLAST
+max_eval = 0.0001
+\\BLAST score threshold for defining clusters in NetClust
+score = 0
+\\Minimum length of BLAST alignment for defining same promoter
+min_length = 50
+\\Minimum identity of BLAST alignment for defining same promoter
+min_identity = 80
+\\Percentage of allowed CDS in each cluster
+max_cds_cluster = 0.2
+\\Percentage of allowed paralogs in each cluster
+max_paralogs = 0.2
+\\Percentage of allowed hits in the minus strand
+max_orientation = 0.2
+\\Percentage of allowed upstream paralogs in each cluster
+max_upparalogs = 0.2
+\\Minimum length of alignment for defining same cluster in CD-HIT (use same as BLAST)
+aL = 0.5
+\\Identity level for defining same cluster in CD-HIT (use same as BLAST)
+c = 0.8
+
+
+
+
+
