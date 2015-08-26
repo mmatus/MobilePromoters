@@ -1,7 +1,7 @@
 # Mobile Promoters
 Perl pipeline to identify mobile promoters in prokaryotic genomes. 
 
-Used in paper: Promoter Propagation in Prokaryotes, NAR 2012 http://nar.oxfordjournals.org/content/early/2012/08/27/nar.gks787.long
+Used in paper: Promoter Propagation in Prokaryotes, NAR 2012, with Mark van Passel and Harm Nijveen http://nar.oxfordjournals.org/content/early/2012/08/27/nar.gks787.long
 
 ## How to use it
 
